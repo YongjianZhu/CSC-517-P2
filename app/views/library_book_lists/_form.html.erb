@@ -17,7 +17,7 @@
     <%= form.number_field :number %>
   </div>
 
-  <% if !current_librarian %>
+  <% if librarian_signed_in? %>
     <div class="field">
       <%= form.label :book_id %>
       <%= form.text_field :book_id %>
