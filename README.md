@@ -13,14 +13,6 @@
 |Ruiwen Wu    |rwu5         |
 |Yongjian Zhu |yzhu48       |
 
-# TODO
-* Librarian feature
-* Edit profile
-* Validation
-* Send Mail
-* Calculate fine
-* Test
-
 # Run the Library Management System
 * To run the project, go to https://still-taiga-41852.herokuapp.com
 # Sign up as admin:
