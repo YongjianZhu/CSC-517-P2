@@ -15,6 +15,10 @@
 
 # Run the Library Management System
 * To run the project, go to https://still-taiga-41852.herokuapp.com
+* To run the project local, please do
+    bundle install
+    rails db:migrate
+    rails s
 # Sign up as admin:
 * The pre-config admin username:    password:
 * After signing up as admin, you will be direct to the main page of the Library Management System. An admin user is able to
