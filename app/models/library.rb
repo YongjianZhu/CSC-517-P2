@@ -5,5 +5,6 @@ class Library < ApplicationRecord
   validates :overdue_fine, presence: true, numericality: {greater_than_or_equal_to: 0}
   validates :university_id, presence: true
   belongs_to :university
-  has_many :books
+  has_many :books, :dependent => :destroy
+  has_many :librarians, :dependent => :destroy
 end

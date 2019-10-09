@@ -9,6 +9,11 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :borrow_histories, :dependent => :destroy
+  has_many :hold_lists, :dependent => :destroy
+  has_many :wish_lists, :dependent => :destroy
+  has_many :student_current_borrow_lists, :dependent => :destroy
+
   def self.show_library
     @libraries = Library.all
   end

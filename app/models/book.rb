@@ -14,6 +14,10 @@ class Book < ApplicationRecord
   belongs_to :university
   belongs_to :library
 
+  has_many :borrow_histories, :dependent => :destroy
+  has_many :hold_lists, :dependent => :destroy
+  has_many :library_book_lists, :dependent => :destroy
+
   def self.search(title, author, subject, date)
     if !title.blank? || !author.blank? || !subject.blank? || !date.blank?
       where(["author LIKE ?", "%#{author}%"]).where(["title LIKE ?", "%#{title}%"]).where(["subject LIKE ?", "%#{subject}%"]).where(["cast(published_date as VARCHAR) LIKE ?", "%#{date}%"])
