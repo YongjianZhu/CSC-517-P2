@@ -21,7 +21,7 @@
         <ul class="nav navbar-nav">
           <li><%= link_to "Show All Libraries", "/s/libraries" %></li>
           <li><%= link_to "Show All Books", "/s/books" %></li>
-          <li><%= link_to "My Wish List", "/s/wish_list", method: :get %></li>
+          <li><%= link_to "Book Marks", "/s/wish_list", method: :get %></li>
           <li><%= link_to "My Current Books", s_current_borrowed_list_path, method: :get %></li>
           <li><%= link_to "My Request", s_request_list_path, method: :get %></li>
         </ul>
@@ -40,7 +40,7 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Books", books_path, method: :get %></li>
             <li><%= link_to "Hold Request", hold_lists_path, method: :get %></li>
-            <li><%= link_to "Current Checked out Book", student_current_borrow_lists_path, method: :get %></li>
+            <li><%= link_to "Checked out Book", student_current_borrow_lists_path, method: :get %></li>
             <li><%= link_to "Borrowing History", borrow_histories_path, method: :get %></li>
             <li><%= link_to "Overdue Books", overdue_index_path, method: :get %></li>
             <li></li>
@@ -62,13 +62,13 @@
           <li><%= link_to "Book", books_path, method: :get %></li>
           <li><%= link_to "Librarians", librarians_path %></li>
           <li><%= link_to "Hold Request", hold_lists_path, method: :get %></li>
-          <li><%= link_to "Current Checked out Books", student_current_borrow_lists_path, method: :get %></li>
+          <li><%= link_to "Checked out Books", student_current_borrow_lists_path, method: :get %></li>
           <li><%= link_to "Overdue Books", overdue_index_path, method: :get %></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
 
-          <li><%= link_to "Admin", "/admins/edit" %></li>
+<!--          <li><%#= link_to "Admin", "/admins/edit" %></li>-->
           <li>
             <%= link_to("logout", destroy_admin_session_path, method: :delete) %>
           </li>

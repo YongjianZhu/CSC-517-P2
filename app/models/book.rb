@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   validates :isbn, presence: true
+  validates :isbn, numericality: { only_integer: true }
   validates :title, presence: true
   validates :is_special_collection, presence: true
   validates :isbn, uniqueness: {scope: :library,

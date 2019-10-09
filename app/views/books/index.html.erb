@@ -35,11 +35,13 @@
       <td class="text-center"><%= book.is_special_collection %></td>
       <% if librarian_signed_in? %>
         <% if current_librarian.library_id == book.library_id %>
-          <td class="text-center"><%= link_to 'Update stock', "/library_book_lists/" +
-              LibraryBookList.find_by_book_id(book.id).id.to_s + "/edit", method: :get %></td>
-          <td class="text-center"><%= link_to 'Show', book %></td>
-          <td class="text-center"><%= link_to 'Edit', edit_book_path(book) %></td>
-          <td class="text-center"><%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <% if current_librarian.is_approved == 1 %>
+            <td class="text-center"><%= link_to 'Update stock', "/library_book_lists/" +
+                LibraryBookList.find_by_book_id(book.id).id.to_s + "/edit", method: :get %></td>
+            <td class="text-center"><%= link_to 'Show', book %></td>
+            <td class="text-center"><%= link_to 'Edit', edit_book_path(book) %></td>
+            <td class="text-center"><%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <% end %>
         <% end %>
       <% else %>
         <td class="text-center"><%= link_to 'Update stock', "/library_book_lists/" +
@@ -55,6 +57,10 @@
 </table>
 
 <br>
+<% if (librarian_signed_in? && current_librarian.is_approved != 1) %>
+  You account hasn't been approved yet, you can only search books.
+<% end %>
+
 <% if (librarian_signed_in? && current_librarian.is_approved == 1) || admin_signed_in? %>
   <%= link_to 'New Book', new_book_path %>
 <% end %>
