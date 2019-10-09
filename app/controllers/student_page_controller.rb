@@ -78,13 +78,14 @@ class StudentPageController < ApplicationController
       return 1
     end
 
-
-    if HoldList.where(book_id: @book_stock.book_id).order('created_at DESC').size > 0
-      HoldList.where(book_id: @book_stock.book_id).order('created_at DESC') do |h|
+    ii = @book_stock.book_id
+    iii = HoldList.where(book_id: @book_stock.book_id).size
+    if HoldList.where(book_id: @book_stock.book_id).size > 0
+      HoldList.where(book_id: @book_stock.book_id).each do |h|
         @student = Student.find(h.student_id)
         @student_borrowed_list = StudentCurrentBorrowList.where(student_id: @student.id)
         # this student reach max borrow number, change 2 later
-        if @student_borrowed_list.size > 2
+        if @student_borrowed_list.size >= 2 * Student.find(h.student_id).education_level
           next
         else
           StudentCurrentBorrowList.new(student_id: h.student_id, book_id: h.book_id).save
@@ -115,7 +116,6 @@ class StudentPageController < ApplicationController
       format.html { redirect_to s_current_borrowed_list_path, notice: 'Return successfully' }
       format.json { head :no_content }
     end
-
   end
 
   def add_to_wish_list
