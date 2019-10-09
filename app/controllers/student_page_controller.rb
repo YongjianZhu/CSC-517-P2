@@ -78,11 +78,11 @@ class StudentPageController < ApplicationController
       return 1
     end
 
-    book_hold_list = HoldList.where(book_id: @book_stock.book_id).order('created_at DESC')
-    if book_hold_list.size > 0
-       book_hold_list do |h|
-        student = Student.find(h.student_id)
-        @student_borrowed_list = StudentCurrentBorrowList.where(student_id: student.id)
+
+    if HoldList.where(book_id: @book_stock.book_id).order('created_at DESC').size > 0
+      HoldList.where(book_id: @book_stock.book_id).order('created_at DESC') do |h|
+        @student = Student.find(h.student_id)
+        @student_borrowed_list = StudentCurrentBorrowList.where(student_id: @student.id)
         # this student reach max borrow number, change 2 later
         if @student_borrowed_list.size > 2
           next
