@@ -29,7 +29,10 @@
 * The fine is calculated using the function: Overdue fine of that library * overdue days
 
 # Rspec testing for one model and one controller
-* We wrote rspec tests for university model and university controller. To run the tests, import the project into Rubymine, run "rake db:migrate RAILS_ENV=test", and then run "bundle exec rspec" in the terminal. This should pass all of the tests in rspec.
+* We wrote rspec tests for university model and university controller. 
+* To run the tests, import the project into Rubymine
+* Run "rake db:migrate RAILS_ENV=test"
+* Then run "bundle exec rspec" in the terminal. This should pass all of the tests in rspec.
 
 # Library Management 
 
