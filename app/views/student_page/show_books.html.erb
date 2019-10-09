@@ -27,7 +27,7 @@
 
   <tbody>
   <% @books.each do |book| %>
-    <% if Library.find(book.library_id).university_id == current_student.university_id %>
+    <% if Library.find(Book.find(book.book_id).library_id).university_id == current_student.university_id %>
       <tr>
         <td class="text-center"><%= Book.find(book.book_id).title %></td>
         <td class="text-center"><%= Book.find(book.book_id).isbn %></td>
