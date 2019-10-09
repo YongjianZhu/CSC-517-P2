@@ -93,7 +93,7 @@ class HoldListsController < ApplicationController
     @borrow_history.save
     @current_list = StudentCurrentBorrowList.new(student_id: @hold_list.student_id, book_id: book_id)
     @current_list.save
-    # TODO: email this student
+    StudentMailer.borrow_success(Student.find(@hold_list.student_id).email).deliver_later
     @hold_list.destroy
     respond_to do |format|
       format.html { redirect_to hold_lists_url, notice: 'Approved!' }
