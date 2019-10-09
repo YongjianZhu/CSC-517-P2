@@ -1,2 +1,51 @@
-<h1>Overdue#index</h1>
-<p>Find me in app/views/overdue/index.html.erb</p>
+<h1>Student Current Borrow Lists</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th class="col text-center">Student</th>
+    <th class="col text-center">Book</th>
+    <th class="col text-center">Checked Out Time</th>
+    <th class="col text-center">Overdue Fine</th>
+    <th class="col text-center" colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @student_current_borrow_lists.each do |student_current_borrow_list| %>
+    <% b = (Time.now - student_current_borrow_list.created_at - Library.find(Book.find(student_current_borrow_list.book_id).library_id).max_day_can_borrow * 86400) / 86400 %>
+    <% if b > 0;
+         b = b.ceil * Library.find(Book.find(student_current_borrow_list.book_id).library_id).overdue_fine;
+       else
+         ; b = 0;
+       end %>
+    <% if b > 0 %>
+      <% if librarian_signed_in? %>
+        <% if Book.find(student_current_borrow_list.book_id).library_id == current_librarian.library_id %>
+          <tr>
+            <td class="text-center"><%= Student.find(student_current_borrow_list.student_id).name %></td>
+            <td class="text-center"><%= Book.find(student_current_borrow_list.book_id).title %></td>
+            <td class="text-center"><%= student_current_borrow_list.created_at %></td>
+            <td class="text-center"><%= b %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td class="text-center"><%= Student.find(student_current_borrow_list.student_id).name %></td>
+          <td class="text-center"><%= Book.find(student_current_borrow_list.book_id).title %></td>
+          <td class="text-center"><%= student_current_borrow_list.created_at %></td>
+          <% b = (Time.now - student_current_borrow_list.created_at - Library.find(Book.find(student_current_borrow_list.book_id).library_id).max_day_can_borrow * 86400) / 86400 %>
+          <% if b > 0;
+               b = b.ceil * Library.find(Book.find(student_current_borrow_list.book_id).library_id).overdue_fine;
+             else
+               ; b = 0;
+             end %>
+          <td class="text-center"><%= b %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
