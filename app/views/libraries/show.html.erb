@@ -26,4 +26,8 @@
 </p>
 
 <%= link_to 'Edit', edit_library_path(@library) %> |
-<%= link_to 'Back', libraries_path %>
+<% if librarian_signed_in? %>
+  <%= link_to 'Back', books_path %>
+<% else %>
+  <%= link_to 'Back', libraries_path %>
+<% end %>

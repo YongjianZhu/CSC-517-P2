@@ -38,6 +38,7 @@
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <% if current_librarian.is_approved == 1 %>
           <ul class="nav navbar-nav">
+            <li><%= link_to "Edit Library Attribute", "/libraries/"+ current_librarian.library_id.to_s + "/edit", method: :get %></li>
             <li><%= link_to "Books", books_path, method: :get %></li>
             <li><%= link_to "Hold Request", hold_lists_path, method: :get %></li>
             <li><%= link_to "Current Checked out Book", student_current_borrow_lists_path, method: :get %></li>
