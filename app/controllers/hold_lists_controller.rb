@@ -93,6 +93,9 @@ class HoldListsController < ApplicationController
     @borrow_history.save
     @current_list = StudentCurrentBorrowList.new(student_id: @hold_list.student_id, book_id: book_id)
     @current_list.save
+    @library_book_list = LibraryBookList.find_by_book_id(book_id)
+    @library_book_list.number -= 1
+    @library_book_list.save
     StudentMailer.borrow_success(Student.find(@hold_list.student_id).email).deliver_later
     @hold_list.destroy
     respond_to do |format|
