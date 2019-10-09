@@ -45,7 +45,7 @@
   10) Cancel his account. 
   11) Log out by clicking on the top right side button "logout".
 # Sign up as librarian:
-* A librarian sign up need to be approved by an admin user. After approved by an admin user, the librarian is direct to librarian main page. A librarian user is able to 
+* **A librarian sign up need to be approved by an admin user.** After approved by an admin user, the librarian is direct to librarian main page. A librarian user is able to 
   1) Edit his/her own profile (change the library he belongs to).
   2) Cancel his/her own account.  
   3) View the libraries that he/she belongs to.
@@ -56,9 +56,12 @@
   8) Log out by clicking on the top right side button "logout".
 # Cases we have considered
 * The same email address can be used for signing up for multiple roles.
-* All validations has been added. You need to use true email format for the registering email address. For convevience of testing, we have removed strict ISBN validation, instead, you need to put integers in the ISBN field. (To use ISBN validation, simply use gem 'isbn_validation', and then using this syntax: "validates :isbn,   :isbn_format => true")
-* Email should be sent to the registered email after 1) a book is borrowed and gotten by a student, 2) or when a librarian/admin approves a hold request and assigns the book to the student, or when 3) book limit is reached, when next book is returned, the system will assign the returned book to the next hold request student.
-* The fine is calculated using the function: Overdue fine of that library * overdue days
+* All validations has been added. You need to use true email format for registering account. And only real email can receive borrow success emails. For convevience of testing, we have removed strict format ISBN validation, instead, you need to put only integers in the ISBN field. (To use ISBN validation, simply use gem 'isbn_validation', and then using this syntax: "validates :isbn,   :isbn_format => true", which would be really annoying for general black box testing)
+* Email will be sent to the registered email after 
+  1) a book is borrowed and gotten by a student
+  2) when a librarian approves a hold request and assigns the book to the student
+  3) first student's book limit is reached, when next book is returned, the system will assign the returned book to the next hold request student.
+* The fine is calculated using the function: Overdue fine of the library * overdue days
 
 # Rspec testing for one model and one controller
 * We wrote rspec tests thoroughly for university model and university controller. 
@@ -66,7 +69,7 @@
 * Run "rake db:migrate RAILS_ENV=test"
 * Then run "bundle exec rspec" in the terminal. This should pass all of the examples in rspec.
 
-## Project Documentation
+# *Project Documentation Below*
 
 # Library Management 
 
