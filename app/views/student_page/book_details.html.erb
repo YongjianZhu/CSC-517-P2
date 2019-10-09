@@ -3,8 +3,8 @@
 <%= @book = @books.find(params[:id]) %>
 
 <strong>Book Image:</strong>
-<%=image_tag @book.image.url(:medium) %>
 
+<%=image_tag @book.image.url(:medium) %>
 <p>
   <strong>Isbn:</strong>
   <%= Book.find(@book.book_id).isbn %>
