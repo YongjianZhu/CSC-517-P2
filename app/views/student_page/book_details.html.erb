@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<% @book = @books.find(params[:id]) %>
+<%= @book = @books.find(params[:id]) %>
 
 <strong>Book Image:</strong>
 
-<%= image_tag Book.find(@book.book_id).image.url(:medium) %>
+<%=image_tag Book.find(@book.book_id).image.url(:medium) %>
 <p>
   <strong>Isbn:</strong>
   <%= Book.find(@book.book_id).isbn %>

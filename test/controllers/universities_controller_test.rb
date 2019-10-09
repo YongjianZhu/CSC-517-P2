@@ -6,15 +6,19 @@ class UniversitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get universities_url
+    get :index
     assert_response :success
   end
 
   test "should get new" do
-    get new_university_url
+    get :new
     assert_response :success
   end
 
+  test "should get show" do
+    get :show
+    assert_response :success
+  end
   test "should create university" do
     assert_difference('University.count') do
       post universities_url, params: { university: { name: @university.name } }
