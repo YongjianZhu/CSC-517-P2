@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'overdue/index'
   devise_for :librarians, controllers: {
       registrations: 'librarians/registrations',
       sessions: 'librarians/sessions'
