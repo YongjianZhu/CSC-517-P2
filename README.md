@@ -17,11 +17,43 @@
 * To run the project, go to https://still-taiga-41852.herokuapp.com
 # Sign up as admin:
 * The pre-config admin username:    password:
-* After signing up as admin, you will be direct to the main page of the Library Management System. An admin user is able to 1) View/create/delete/edit universities. 2) View/create/delete/edit libraries. 3) View/create/delete/edit books. 4) View/create/delete/edit librarians. 5) View/create/delete/edit students. 6) Approve/deny hold requests. 7) View overdue books. 8) Admin can update book stock after creating a book. 9) Using search bar, admin is able to search a book based on its title/author/subject/date. 10) Edit the admin's own profile. 11) Approve/deny a librarian sign up request. 12) Cancel his account. 13) Log out by clicking on the top right side button "logout".
+* After signing up as admin, you will be direct to the main page of the Library Management System. An admin user is able to
+  1) View/create/delete/edit universities. 
+  2) View/create/delete/edit libraries. 
+  3) View/create/delete/edit books.
+  4) View/create/delete/edit librarians. 
+  5) View/create/delete/edit students. 
+  6) Approve/deny hold requests. 
+  7) View overdue books. 
+  8) Admin can update book stock after creating a book.
+  9) Using search bar, admin is able to search a book based on its title/author/subject/date. 
+  10) Edit the admin's own profile. 
+  11) Approve/deny a librarian sign up request. 
+  12) Cancel his account. 
+  13) Log out by clicking on the top right side button "logout".
 # Sign up as student: 
-* Student can sign up by themself. After signing up as student, you will be direct to the main page of the Library Management System as student view. A student user is able to 1) View/borrow the list of books of his/her university. 2) Add/delete a book of his university to wishlist. 3) View existing libraries in the system and their details. 4) Search book based on its title/auther/subject/date. 5) View his/her current borrowed books and the overdue fine. 6) return a book. 6) Create a hold request when a book is not available or when a book is belong to special collection 7) View/delete the hold request of his own. 8) Edit his/her own profile. 9) Cancel his account. 10) Log out by clicking on the top right side button "logout".
+* Student can sign up by themself. After signing up as student, you will be direct to the main page of the Library Management System as student view. A student user is able to 
+  1) View/borrow the list of books of his/her university.
+  2) Add/delete a book of his university to wishlist.
+  3) View existing libraries in the system and their details.
+  4) Search book based on its title/auther/subject/date. 
+  5) View his/her current borrowed books and the overdue fine. 
+  6) return a book.
+  7) Create a hold request when a book is not available or when a book is belong to special collection 
+  8) View/delete the hold request of his own. 
+  9) Edit his/her own profile. 
+  10) Cancel his account. 
+  11) Log out by clicking on the top right side button "logout".
 # Sign up as librarian:
-* A librarian sign up need to be approved by an admin user. After approved by an admin user, the librarian is direct to librarian main page. A librarian user is able to 1) Edit his/her own profile (change the library he belongs to). 2) Cancel his/her own account. 3) View the libraries that he/she belongs to. 4) Edit the library attribute that he/she belongs to. 5) View/edit/destroy the book in the library he/she belongs to. 6) Update book stock in the library he/she belongs to. 7) Using search bar, librarian is able to search a book based on its title/author/subject/date. 8) Log out by clicking on the top right side button "logout".
+* A librarian sign up need to be approved by an admin user. After approved by an admin user, the librarian is direct to librarian main page. A librarian user is able to 
+  1) Edit his/her own profile (change the library he belongs to).
+  2) Cancel his/her own account.  
+  3) View the libraries that he/she belongs to.
+  4) Edit the library attribute that he/she belongs to. 
+  5) View/edit/destroy the book in the library he/she belongs to.
+  6) Update book stock in the library he/she belongs to. 
+  7) Using search bar, librarian is able to search a book based on its title/author/subject/date. 
+  8) Log out by clicking on the top right side button "logout".
 # Cases we have considered
 * The same email address can be used for signing up for multiple roles.
 * All validations has been added. You need to use true email format for the registering email address. For convevience of testing, we have removed strict ISBN validation, instead, you need to put integers in the ISBN field. (To use ISBN validation, simply use gem 'isbn_validation', and then using this syntax: "validates :isbn,   :isbn_format => true")
@@ -29,10 +61,12 @@
 * The fine is calculated using the function: Overdue fine of that library * overdue days
 
 # Rspec testing for one model and one controller
-* We wrote rspec tests for university model and university controller. 
+* We wrote rspec tests thoroughly for university model and university controller. 
 * To run the tests, import the project into Rubymine
 * Run "rake db:migrate RAILS_ENV=test"
-* Then run "bundle exec rspec" in the terminal. This should pass all of the tests in rspec.
+* Then run "bundle exec rspec" in the terminal. This should pass all of the examples in rspec.
+
+## Project Documentation
 
 # Library Management 
 
