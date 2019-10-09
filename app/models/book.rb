@@ -2,7 +2,8 @@ class Book < ApplicationRecord
   validates :isbn, :isbn_format => true, presence: true
   validates :title, presence: true
   validates :is_special_collection, presence: true
-
+  validates :isbn, uniqueness: { scope: :library,
+                                 message: "existed in this library" }
   validates :author, presence: true
   validates :language, presence: true
   validates :published_date, presence: true
