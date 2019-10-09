@@ -6,6 +6,7 @@
     <th class="col text-center">Student</th>
     <th class="col text-center">Book</th>
     <th class="col text-center">Checked Out Time</th>
+    <th class="col text-center">Overdue Fine</th>
     <th class="col text-center" colspan="3"></th>
   </tr>
   </thead>
@@ -19,6 +20,9 @@
           <td class="text-center"><%= Student.find(student_current_borrow_list.student_id).name %></td>
           <td class="text-center"><%= Book.find(student_current_borrow_list.book_id).title %></td>
           <td class="text-center"><%= student_current_borrow_list.created_at %></td>
+          <% b = (Time.now - student_current_borrow_list.created_at - Library.find(Book.find(student_current_borrow_list.book_id).library_id).max_day_can_borrow*86400)/86400 %>
+          <% if b > 0; b = b.ceil * Library.find(Book.find(student_current_borrow_list.book_id).library_id).overdue_fine; else; b=0;end%>
+          <td class="text-center"><%= b %></td>
         </tr>
       <% end %>
     <% else %>
@@ -26,6 +30,9 @@
         <td class="text-center"><%= Student.find(student_current_borrow_list.student_id).name %></td>
         <td class="text-center"><%= Book.find(student_current_borrow_list.book_id).title %></td>
         <td class="text-center"><%= student_current_borrow_list.created_at %></td>
+        <% b = (Time.now - student_current_borrow_list.created_at - Library.find(Book.find(student_current_borrow_list.book_id).library_id).max_day_can_borrow*86400)/86400 %>
+        <% if b > 0; b = b.ceil * Library.find(Book.find(student_current_borrow_list.book_id).library_id).overdue_fine; else; b=0;end%>
+        <td class="text-center"><%= b %></td>
       </tr>
     <% end %>
 
