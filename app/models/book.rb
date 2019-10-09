@@ -17,6 +17,7 @@ class Book < ApplicationRecord
   has_many :borrow_histories, :dependent => :destroy
   has_many :hold_lists, :dependent => :destroy
   has_many :library_book_lists, :dependent => :destroy
+  has_many :student_current_borrow_lists, :dependent => :destroy
 
   def self.search(title, author, subject, date)
     if !title.blank? || !author.blank? || !subject.blank? || !date.blank?
