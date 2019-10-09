@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   validates :isbn, presence: true
-  validates :isbn, numericality: { only_integer: true }
+  validates :isbn, format: { with: /[\d -]+/, message: "only allows 0-9 and '-'" }
   validates :title, presence: true
   validates :is_special_collection, presence: true
   validates :isbn, uniqueness: {scope: :library,
