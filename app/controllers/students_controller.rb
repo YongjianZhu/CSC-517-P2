@@ -42,7 +42,8 @@ class StudentsController < ApplicationController
   # PATCH/PUT /libraries/1.json
   def update
     @student = Student.find(params[:id])
-    if @student.update(student_params)
+    p = params.require(:student).permit(:email, :name, :education_level, :university_id)
+    if @student.update(p)
       redirect_to root_path
     else
       render 'edit'

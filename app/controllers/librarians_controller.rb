@@ -42,7 +42,8 @@ class LibrariansController < ApplicationController
   # PATCH/PUT /libraries/1.json
   def update
     @librarian = Librarian.find(params[:id])
-    if @librarian.update(librarian_params)
+    p = params.require(:librarian).permit(:email, :name, :library_id)
+    if @librarian.update(p)
       redirect_to root_path
     else
       render 'edit'
