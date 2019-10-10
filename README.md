@@ -60,7 +60,7 @@
   8) Log out by clicking on the top right side button "logout".
 # Cases we have considered
 * The same email address can be used for signing up for multiple roles.
-* All validations has been added. You need to use true email format for registering account. And only real email can receive borrow success emails. For convevience of testing, we have removed strict format ISBN validation, instead, you need to put only integers in the ISBN field. (To use ISBN validation, simply use gem 'isbn_validation', and then using this syntax: "validates :isbn,   :isbn_format => true", which would be really annoying for general black box testing)
+* All validations has been added. You need to use true email format for registering account. And only real email can receive borrow success emails. For convevience of testing, we have removed strict format ISBN validation, instead, you need to put only integers and the symbol "-" in the ISBN field. (To use ISBN validation, simply use gem 'isbn_validation', and then using this syntax: "validates :isbn,   :isbn_format => true", which would be really annoying for general black box testing)
 * Email will be sent to the registered email after 
   1) a book is borrowed and gotten by a student
   2) when a librarian approves a hold request and assigns the book to the student
