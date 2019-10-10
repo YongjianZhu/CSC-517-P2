@@ -20,8 +20,6 @@
     <% if current_student %>
       <h3><%= link_to current_student.name, "/students/edit" %></h3>
       <ul class="nav nav-list">
-        <li><%= link_to "Show all students", students_path, method: :get %></li>
-        <li><%= link_to "Show all librarians", librarians_path %></li>
         <li><%= link_to "Edit my profile", "/students/edit" %></li>
       </ul>
     <% end %>

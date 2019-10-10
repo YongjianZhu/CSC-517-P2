@@ -17,14 +17,6 @@
     <%= form.number_field :number %>
   </div>
 
-  <% if librarian_signed_in? %>
-    <div class="field">
-      <%= form.label :book_id %>
-      <%= form.text_field :book_id %>
-      <p>Please type Book ID</p>
-    </div>
-  <% end %>
-
   <div class="actions">
     <%= form.submit %>
   </div>
