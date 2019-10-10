@@ -60,12 +60,37 @@
   8) Log out by clicking on the top right side button "logout".
 # Cases we have considered
 * The same email address can be used for signing up for multiple roles.
-* All validations has been added. You need to use true email format for registering account. And only real email can receive borrow success emails. For convevience of testing, we have removed strict format ISBN validation, instead, you need to put only integers and the symbol "-" in the ISBN field. (To use ISBN validation, simply use gem 'isbn_validation', and then using this syntax: "validates :isbn,   :isbn_format => true", which would be really annoying for general black box testing)
+* All validations has been added. You need to use true email format for registering account. And only real email can receive borrow success emails. For the part of ISBN validation, you will need to use real ISBN format for creating a book. We will provide some examples of ISBN number in the next section.
 * Email will be sent to the registered email after 
   1) a book is borrowed and gotten by a student
   2) when a librarian approves a hold request and assigns the book to the student
   3) first student's book limit is reached, when next book is returned, the system will assign the returned book to the next hold request student.
 * The fine is calculated using the function: Overdue fine of the library * overdue days
+# ISBN examples we provide
+* 978-3-16-148410-0
+* 978-7-303-05148-9
+* 978-7-5448-0275-8
+* 9780761160830
+* 9781501168680
+* 9781433644412
+* 9781595231154
+* 9780143122029
+* 9781733313605
+* 9781641701235
+* 9781947556553
+* 9780061960543
+* 9781465483669
+* 9780807057834
+* 9781620973929
+* 9780393635249
+* 9781984853783
+* 9780307409607
+* 9780073513294
+* 9780807005934
+* 9780393354768
+* 9780060930349
+* 9780077776749
+* 9781421428833
 
 # Rspec testing for one model and one controller
 * We wrote rspec tests thoroughly for university model and university controller. 
