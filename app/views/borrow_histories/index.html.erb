@@ -7,6 +7,7 @@
   <tr>
     <th class="col text-center">Student</th>
     <th class="col text-center">Book</th>
+    <th class="col text-center">Date</th>
     <th class="col text-center" colspan="3"></th>
   </tr>
   </thead>
@@ -18,18 +19,14 @@
         <tr>
           <td class="text-center"><%= Student.find(borrow_history.student_id).name %></td>
           <td class="text-center"><%= Book.find(borrow_history.book_id).title %></td>
-          <td class="text-center"><%= link_to 'Show', borrow_history %></td>
-          <td class="text-center"><%= link_to 'Edit', edit_borrow_history_path(borrow_history) %></td>
-          <td class="text-center"><%= link_to 'Destroy', borrow_history, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <td class="text-center"><%= borrow_history.created_at %></td>
         </tr>
       <% end %>
     <% else %>
       <tr>
         <td class="text-center"><%= Student.find(borrow_history.student_id).name %></td>
         <td class="text-center"><%= Book.find(borrow_history.book_id).title %></td>
-        <td class="text-center"><%= link_to 'Show', borrow_history %></td>
-        <td class="text-center"><%= link_to 'Edit', edit_borrow_history_path(borrow_history) %></td>
-        <td class="text-center"><%= link_to 'Destroy', borrow_history, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <td class="text-center"><%= borrow_history.created_at %></td>
       </tr>
     <% end %>
   <% end %>
