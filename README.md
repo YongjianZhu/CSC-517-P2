@@ -60,14 +60,22 @@
   8) Log out by clicking on the top right side button "logout".
 # Cases we have considered
 * The same email address can be used for signing up for multiple roles.
-* All validations has been added. You need to use true email format for registering account. And only real email can receive borrow success emails. For the part of ISBN validation, you will need to use real ISBN format for creating a book. We will provide some examples of ISBN number in the next section.
+* All validations has been added. You need to use true email format for registering account. And only real email can receive borrow success emails. 
+* **For the part of ISBN validation, you will need to use real ISBN format for creating a book. We have provided some examples of ISBN number in the next section.**
 * Email will be sent to the registered email after 
   1) a book is borrowed and gotten by a student
   2) when a librarian approves a hold request and assigns the book to the student
   3) first student's book limit is reached, when next book is returned, the system will assign the returned book to the next hold request student.
 * The fine is calculated using the function: Overdue fine of the library * overdue days
+
+# Rspec testing for one model and one controller
+* We wrote rspec tests thoroughly for university model and university controller. 
+* To run the tests, import the project into Rubymine
+* Run "rake db:migrate RAILS_ENV=test"
+* Then run "bundle exec rspec" in the terminal. This should pass all of the examples in rspec.
+
 # ISBN examples we provide
-* 9783161484100
+* 9783161484100 
 * 9787303051489
 * 9787544802758
 * 9780761160830
@@ -108,12 +116,6 @@
 * 9781476782751
 * 9780812224177
 * 9781099462115
-
-# Rspec testing for one model and one controller
-* We wrote rspec tests thoroughly for university model and university controller. 
-* To run the tests, import the project into Rubymine
-* Run "rake db:migrate RAILS_ENV=test"
-* Then run "bundle exec rspec" in the terminal. This should pass all of the examples in rspec.
 
 # *Project Documentation Below*
 
