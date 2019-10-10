@@ -37,7 +37,7 @@
         <td class="text-center"><%= book.number %></td>
         <td class="text-center"><%= HoldList.where(book_id: book.book_id).size %></td>
         <td class="text-center"><%= link_to 'Borrow', "/s/books/" + book.id.to_s, method: :post %></td>
-        <td class="text-center"><%= link_to 'Add to wish list', "/s/wish_list/" + book.id.to_s, method: :post %></td>
+        <td class="text-center"><%= link_to 'Bookmark', "/s/wish_list/" + book.id.to_s, method: :post %></td>
         <td class="text-center"><%= link_to 'Details', "/s/books/" + book.id.to_s, method: :get %></td>
       </tr>
     <% end %>
