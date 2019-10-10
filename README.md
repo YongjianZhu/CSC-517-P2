@@ -67,9 +67,9 @@
   3) first student's book limit is reached, when next book is returned, the system will assign the returned book to the next hold request student.
 * The fine is calculated using the function: Overdue fine of the library * overdue days
 # ISBN examples we provide
-* 978-3-16-148410-0
-* 978-7-303-05148-9
-* 978-7-5448-0275-8
+* 9783161484100
+* 9787303051489
+* 9787544802758
 * 9780761160830
 * 9781501168680
 * 9781433644412
