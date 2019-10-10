@@ -15,7 +15,7 @@
 
 # Run the Library Management System
 * To run the project, go to https://still-taiga-41852.herokuapp.com
-* To run the project local, please do
+* To run the project locally, please do
     1) `bundle install`
     2) `rails db:migrate`
     3) `rails s`
