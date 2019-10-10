@@ -19,9 +19,9 @@
     1) `bundle install`
     2) `rails db:migrate`
     3) `rails s`
-# Sign up as admin:
-* The pre-config admin username:`a@a.a`    password:`111111`
-* After signing up as admin, you will be direct to the main page of the Library Management System. An admin user is able to
+# Log in as admin:
+* **The pre-config admin username: `a@a.a`    password:`111111`**
+* After loging in as admin, you will be direct to the main page of the Library Management System. An admin user is able to
   1) View/create/delete/edit universities. 
   2) View/create/delete/edit libraries. 
   3) View/create/delete/edit books.
